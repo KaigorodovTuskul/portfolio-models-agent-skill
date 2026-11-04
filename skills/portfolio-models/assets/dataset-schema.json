@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Point-in-time total-return dataset provenance",
+  "type": "object",
+  "required": ["dataset_id", "base_currency", "return_kind", "observation_frequency", "vendor", "source_url", "as_of_date", "first_observation", "last_observation", "sha256", "license_checked", "trading_halt_policy"],
+  "properties": {
+    "dataset_id": {"type": "string", "minLength": 1},
+    "base_currency": {"type": "string", "minLength": 3, "maxLength": 3},
+    "return_kind": {"enum": ["simple_total_return", "log_total_return", "price_return"]},
+    "observation_frequency": {"enum": ["daily", "weekly", "monthly", "quarterly"]},
+    "vendor": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "format": "uri"},
+    "as_of_date": {"type": "string", "format": "date"},
+    "first_observation": {"type": "string", "format": "date"},
+    "last_observation": {"type": "string", "format": "date"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "license_checked": {"const": true},
+    "trading_halt_policy": {"enum": ["NO_EXECUTION_WHEN_CLOSED", "REAL_EXECUTION_CALENDAR"]}
+  },
+  "additionalProperties": true
+}

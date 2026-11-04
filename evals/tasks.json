@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "purpose": "Behavioral acceptance scenarios; no LLM results are claimed",
+  "cases": [
+    {"id":"selection","task":"examples/01-model-selection.md","must_detect":["total-return","cash baseline","CVaR","GMV","risk matching"]},
+    {"id":"robust-audit","task":"examples/02-robust-audit.md","must_detect":["mean uncertainty","kappa=0","lambda units","same OOS dates"]},
+    {"id":"dro-dual","task":"examples/03-dro-false-identity.md","must_detect":["dual norm","constant long-only l1","support","epsilon"]},
+    {"id":"antifragility","task":"examples/04-antifragility.md","must_detect":["linear short","long put","cost","margin"]},
+    {"id":"outliers","task":"examples/05-2022-smoothing.md","must_detect":["training-only","ex post invalid","realised OOS"]}
+  ]
+}
